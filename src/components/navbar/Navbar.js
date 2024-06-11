@@ -1,5 +1,5 @@
 
-import { configNavbar } from './config';
+import { configNavbar } from '../../config/config';
 import ButtonNavbar from './ButtonNavbar';
 import styled from 'styled-components';
 
