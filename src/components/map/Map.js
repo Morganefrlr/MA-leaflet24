@@ -1,11 +1,13 @@
-import React from 'react';import { MapContainer, TileLayer } from 'react-leaflet';
+import { useContext } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'
 import styled from 'styled-components';
 import Markers from './Markers';
+import Context from '../../context/Context';
 
 const Map = () => {
 
-
+    const {cities} = useContext(Context)
     return (
         <MapStyled>
             <MapContainer center={[48.866667,2.333333]} zoom={4} scrollWheelZoom={false}>
@@ -13,7 +15,7 @@ const Map = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                <Markers/>
+                <Markers cities={cities}/>
             </MapContainer>
         </MapStyled>
 

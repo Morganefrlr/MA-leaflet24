@@ -4,12 +4,23 @@ import Navbar from './components/navbar/Navbar';
 import Context from './context/Context';
 import { configNavbar } from './config/config';
 import styled from 'styled-components';
+import { emptyData } from './fakeData/fakeData';
+import { useCity } from './hooks/useCity';
 
 function App() {
   const [navigation, setNavigation] = useState('map')
+  const [capitalSelected, setCapitalSelected] = useState(emptyData)
+  const [adminPanelSelected, setAdminPanelSelected] = useState('add')
 
+  const {cities, setCities, handleDeleteCity,handleAddCity,handleEditCity} = useCity()
+
+  
   const providerValue = {
-    navigation, setNavigation
+    navigation, setNavigation,
+    capitalSelected, setCapitalSelected,
+    adminPanelSelected, setAdminPanelSelected,
+    cities, setCities, handleDeleteCity,handleAddCity,handleEditCity
+
   }
 
 
