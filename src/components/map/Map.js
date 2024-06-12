@@ -4,6 +4,9 @@ import 'leaflet/dist/leaflet.css'
 import styled from 'styled-components';
 import Markers from './Markers';
 import Context from '../../context/Context';
+import { LocateControl } from './configCurrentLoc';
+
+
 
 const Map = () => {
 
@@ -16,6 +19,7 @@ const Map = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                 <Markers cities={cities}/>
+                <LocateControl position="topright" />
             </MapContainer>
         </MapStyled>
 
